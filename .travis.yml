@@ -1,2 +1,10 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: ZYOaAUKRAR4ECzAyBa+KhJJxf3jYLnIQY4Msj6NUr2exX7r6FUsCiqoV+To8R3zXcV6aPYk4nNuQT/ToihTZPf6+HJHXNSP+h1T9GJLpOn7Rf9qFJRnUDtZNExgM5BnLyzUM+N0Azt17HVWu+AJdNwfUsD/qiwgqBf8yR/R+PCwt6BxJA7JLz1yupemj7o07GVEgHYodWje+F+pCbF7sYQjwJideko0A+wMFit0lEP72gEn2NAZxWOMXauy8ZzhSgmkXrzMuBDoeQQ8bANH6D97UF+40x7Ol4Gx5jjp5kw4DbqUgfLLTsvxmG5lKaM0Cekn5qVnR9q9Kh5pEyFgBalFUB4ZT+D43k75WBNXYs8TEzbhMr+sP1V/a27EpLjDGPlV1xB+TswtjqkDzZSB1UrQdN2aIcAp57wE6AzGCVhLE3JbRkQSD34a/5Nrv1rSQhsSfYfQ+u+AsxZgi3LX+iQZmibq9a6CUlCEYx3tgPA3kHMVTFzkkUo/pqENzOCELyrHkY4bQGi1Go5Jos8GHIfjCLlfxfeeY7mUTnj5MjDWarsfyOCikWcdLyeM3TWSnGjCdQKoy5QltxQqLzt5BJI7AC8N4Ky1jCGe2emDjZhml7SMqUjVxWE+8yr+eCi2qWe1o0ibPT+KhQnj96tPxCC+SjzAaXtqt27/9nuYaxEI=
+  app: https://git.heroku.com/warm-basin-66468.git
+  on:
+    repo: ianmcdermott/blog-api
+    branch: Testing-Branch

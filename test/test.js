@@ -1,9 +1,9 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
+const should = chai.should();
 
 const {app, runServer, closeServer} = require('../server');
 
-const should = chai.should();
 
 chai.use(chaiHttp);
 
@@ -35,23 +35,25 @@ describe('Blog Post', function(){
 		});
 
 	it("Should POST item", function(){
-		return chai.request(app);
+		
 		const newItem = {
 			title: 'Test Title', 
 			content: 'Test content',
 			author: 'Test author',
-			publishDate: '1/1/18'}
-		.post('/blogPostRouter')
-		.send(newItem)
-		.then(function(res){
-			res.should.have.status(201);
-			res.should.be.json;
-			res.body.should.be.a('object');
-			res.body.should.include.keys('id', 'title', 'content', 'author', 'publishDate');
-			res.body.id.should.not.be.null;
-			res.body.should.deep.equal(Object.assign(newItem, {id: res.body.id}));
+			publishDate: '1/1/18'};
+
+		return chai.request(app);
+			.post('/blogPostRouter')
+			.send(newItem)
+			.then(function(res){
+				res.should.have.status(201);
+				res.should.be.json;
+				res.body.should.be.a('object');
+				res.body.should.include.keys('id', 'title', 'content', 'author', 'publishDate');
+				res.body.id.should.not.be.null;
+				res.body.should.deep.equal(Object.assign(newItem, {id: res.body.id}));
+			});
 		});
-	});
 
 	it('Should replace items on PUT', function(){
 		const updateData = {

@@ -42,7 +42,7 @@ describe('Blog Post', function(){
 			author: 'Test author',
 			publishDate: '1/1/18'};
 
-		return chai.request(app);
+		return chai.request(app)
 			.post('/blogPostRouter')
 			.send(newItem)
 			.then(function(res){

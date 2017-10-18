@@ -13,10 +13,10 @@ app.get('/', (req, res) =>{
 });
 
 app.use('/blogPostRouter', blogPostRouter);
-
+/*
 app.listen(process.env.PORT || 8080, () =>{
 	console.log(`App is listening on port ${process.env.PORT || 8080}`);
-});
+});*/
 let server;
 //run the server
 function runServer(){
@@ -27,7 +27,7 @@ function runServer(){
 			resolve(server);
 		}).on('error', err => {
 			reject(err)
-		})
+		});
 	});
 }
 
@@ -45,7 +45,7 @@ function closeServer(){
 }
 
 if(require.main === module){
-	runServer()catch(err => console.error(err));
+	runServer().catch(err => console.error(err));
 };
 
 module.exports = {app, runServer, closeServer};

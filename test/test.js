@@ -16,7 +16,7 @@ describe('Blog Post', function(){
 		return closeServer();
 	});
 
-	it('Should list items on GET'. function(){
+	it('Should list items on GET', function(){
 		return chai.request(app)
 			.get('/blogPostRouter')
 			.then(function(res){
@@ -54,12 +54,12 @@ describe('Blog Post', function(){
 	});
 
 	it('Should replace items on PUT', function(){
-		const update = {
+		const updateData = {
 			title: 'Update Title', 
 			content: 'Update content',
 			author: 'Update author',
-			publishDate: '1/1/19'}
-		}
+			publishDate: '1/1/19'
+		};
 		return chai.request(app)
 			.get('/blogPostRouter')
 			.then(function(res){

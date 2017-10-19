@@ -55,6 +55,16 @@ describe('Blog Post', function(){
 			});
 		});
 
+	it("Should make sure POST values match", function(){
+		const badInput = {};
+		return chai.request(app)
+			.post('/blogPostRouter')
+			.send(badInput)
+			.catch(function(res){
+				res.should.have.status(400);
+			});
+		});
+
 	it('Should replace items on PUT', function(){
 		const updateData = {
 			title: 'Update Title', 
@@ -75,6 +85,8 @@ describe('Blog Post', function(){
 				res.should.have.status(204);
 			});
 		});
+
+
 
 	it('Should delete item on DELETE', function(){
 		return chai.request(app)

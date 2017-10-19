@@ -40,8 +40,8 @@ function closeServer(){
 				return;
 			}
 			resolve();
-		})
-	})
+		});
+	});
 }
 
 if(require.main === module){
